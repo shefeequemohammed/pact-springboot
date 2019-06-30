@@ -14,6 +14,12 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student getStudentById(String id) {
-        return new Student(id, "John", "Smith", 21);
+        
+        if(id.equals("1"))
+             return new Student(id, "Steve", "Waugh", 21);
+        else if(id.equals("2"))
+             return  new Student(id, "Brian", "Lara", 22);
+        else
+             return  new Student(id, "Rahul", "Dravid", 23);
     }
 }

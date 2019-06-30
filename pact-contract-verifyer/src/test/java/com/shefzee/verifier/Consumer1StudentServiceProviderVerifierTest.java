@@ -18,11 +18,20 @@ import org.junit.runner.RunWith;
 public class Consumer1StudentServiceProviderVerifierTest {
 
 
-    @State("Student 1 exist") // Method will be run before testing interactions that require "with-data" state
-    public void Student() {
-        System.out.println("Student 1 exist" );
+    @State("Check for Specific Student id") // Method will be run before testing interactions that require "with-data" state
+    public void checkForRandomStudent() {
+        System.out.println("Check for Specific Student Contract" );
     }
 
+    @State("Check for random Student id") // Method will be run before testing interactions that require "with-data" state
+    public void checkForSpecificStudent() {
+        System.out.println("Check for Student Contract" );
+    }
+
+    @State("Department Response contract check") // Method will be run before testing interactions that require "with-data" state
+    public void departmentTest() {
+        System.out.println("Department Response contract check");
+    }
 
     @TestTarget // Annotation denotes Target that will be used for tests
     public final Target target = new HttpTarget(8085); // Out-of-the-box implementation of Target (for more information take a look at Test Target section)
