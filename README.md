@@ -152,6 +152,25 @@ Once both the tests are run, the pact file will be generated. By default, the pa
                   
  As per my observation, this can be done only or upto version 3.5.10 of pact-jvm-consumer-junit_2.12. For higher versions, pacts will be generated in target/pacts folder only.
  
+ ## pact-contract-verifyer
  
+ #### Consumer1StudentServiceProviderVerifierTest
+ 
+ This test will verify the States present in the Pact file with the provider instance.
+ 
+          @State("Check for Specific Student id") // Method will be run before testing interactions that require "with-data" state
+          public void checkForRandomStudent() {
+            System.out.println("Check for Specific Student Contract" );
+          }
+
+          @State("Check for random Student id") // Method will be run before testing interactions that require "with-data" state
+           public void checkForSpecificStudent() {
+           System.out.println("Check for Student Contract" );
+          } 
+
+         @State("Department Response contract check") // Method will be run before testing interactions that require "with-data" state
+         public void departmentTest() {
+         System.out.println("Department Response contract check");
+          }
  
  
