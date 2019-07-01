@@ -5,12 +5,12 @@
 This project exposes two API's
 1) "/student/{id}" which will give a response in the following Json format:-
 
-      {
-         "id": "1",
-         "firstName": "Steve",
-         "lastName": "Waugh",
-         "age": 21
-      }
+                {
+                    "id": "1",
+                    "firstName": "Steve",
+                    "lastName": "Waugh",
+                    "age": 21
+                 }
 
 Response is hard coded as follows:=
 
@@ -23,23 +23,23 @@ Response is hard coded as follows:=
 
 2) "/department/{id}" which will give a response as follows:-
 
-  {
-  "id": "1",
-  "name": "Dep 1",
-  "students": [
-    {
-      "id": "1",
-      "firstName": "John",
-      "lastName": "Smith",
-      "age": 23
-    },
-    {
-      "id": "2",
-      "firstName": "Adam",
-      "lastName": "Zamba",
-      "age": 21
-    }
-  ]
-}
-
+             {
+                "id": "1",
+                "name": "Dep 1",
+                "students": [
+                        {
+                          "id": "1",
+                          "firstName": "John",
+                          "lastName": "Smith",
+                          "age": 23
+                         },
+                         {
+                          "id": "2",
+                          "firstName": "Adam",
+                          "lastName": "Zamba",
+                          "age": 21
+                         }
+                            ]
+               }
+The response has a student array in it.
 
