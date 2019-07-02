@@ -15,7 +15,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
       Student student1 = new Student();
       student1.setId("1");
-      student1.setAge(23);
+      student1.setAge(21);
       student1.setFirstName("John");
       student1.setLastName("Smith");
 

@@ -1,0 +1,217 @@
+{
+    "provider": {
+        "name": "StudentServiceProvider"
+    },
+    "consumer": {
+        "name": "StudentServiceConsumer1"
+    },
+    "interactions": [
+        {
+            "description": "A request for Student with id 1",
+            "request": {
+                "method": "GET",
+                "path": "/student/1"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "firstName": "Steve",
+                    "lastName": "Waugh",
+                    "id": "1",
+                    "age": 21
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "Check for Specific Student id"
+                }
+            ]
+        },
+        {
+            "description": "A request for Student with id 2",
+            "request": {
+                "method": "GET",
+                "path": "/student/2"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "firstName": "Brian",
+                    "lastName": "Lara",
+                    "id": "2",
+                    "age": 22
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "Check for Specific Student id"
+                }
+            ]
+        },
+        {
+            "description": "A request for Student with random id",
+            "request": {
+                "method": "GET",
+                "path": "/student/3"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "firstName": "John",
+                    "lastName": "Smith",
+                    "id": "3",
+                    "age": 18
+                },
+                "matchingRules": {
+                    "body": {
+                        "$.id": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.firstName": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.lastName": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.age": {
+                            "matchers": [
+                                {
+                                    "match": "integer"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    }
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "Check for random Student id"
+                }
+            ]
+        },
+        {
+            "description": "A request for DepartmentResponse Object with Id 1",
+            "request": {
+                "method": "GET",
+                "path": "/department/1"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "name": "Dep 1",
+                    "students": [
+                        {
+                            "firstName": "John",
+                            "lastName": "Smith",
+                            "id": "1",
+                            "age": 21
+                        }
+                    ],
+                    "id": "1"
+                },
+                "matchingRules": {
+                    "body": {
+                        "$.id": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.name": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.students": {
+                            "matchers": [
+                                {
+                                    "match": "type",
+                                    "min": 1
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.students[*].id": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.students[*].firstName": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.students[*].lastName": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.students[*].age": {
+                            "matchers": [
+                                {
+                                    "match": "number"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    }
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "Department Response contract check"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.10"
+        }
+    }
+}

@@ -55,7 +55,7 @@ public class DepartmentServiceConsumerContracttest {
 
 
         return builder
-                .given("Department 1 exist")
+                .given("Department Response contract check")
                 .uponReceiving("A request for DepartmentResponse Object with Id 1")
                 .path("/department/1")
                 .method("GET")
