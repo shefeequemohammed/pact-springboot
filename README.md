@@ -173,6 +173,8 @@ Once both the tests are run, the pact file will be generated. By default, the pa
          System.out.println("Department Response contract check");
           }
           
-          ![Screenshot](https://github.com/shefeequemohammed/pact-springboot/blob/master/pics/verify-output.JPG)
+The output of the verifier is as follow:-
+          
+https://github.com/shefeequemohammed/pact-springboot/blob/master/pics/verify-output.JPG
  
  
