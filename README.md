@@ -12,8 +12,8 @@ This project exposes two API's
 
                 {
                     "id": "1",
-                    "firstName": "Steve",
-                    "lastName": "Waugh",
+                    "firstName": "John",
+                    "lastName": "Wick",
                     "age": 21
                  }
 
