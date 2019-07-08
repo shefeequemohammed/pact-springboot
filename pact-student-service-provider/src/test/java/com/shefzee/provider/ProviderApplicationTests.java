@@ -1,7 +1,6 @@
 package com.shefzee.provider;
 
 import com.shefzee.provider.dto.DepartmentResponse;
-import com.shefzee.provider.entity.Department;
 import com.shefzee.provider.entity.Student;
 import org.junit.Test;
 import org.junit.runner.RunWith;
